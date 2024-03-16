@@ -1,13 +1,13 @@
 <section class="container">
-    <form>
+    <form [formGroup]="loginForm">
         <label for="email">Email</label>
-        <input type="text" id="email"/>
+        <input type="text" id="email" formControlName="email"/>
       
         <label for="password">Senha</label>
-        <input type="password" id="password" />
+        <input type="password" id="password" formControlName="password" />
       
-        <button type="submit">Entrar</button>
-        <button type="button">Esqueci a senha</button>
-        <button type="button">Cadastrar</button>
+        <button type="submit" (click)="onLogin()">Entrar</button>
+        <button type="button" (click)="onForgotPassword()">Esqueci a senha</button>
+        <button type="button" (click)="onRegister()">Cadastrar</button>
     </form>
 </section>
