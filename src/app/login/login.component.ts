@@ -6,14 +6,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SidebarComponent } from "../shared/components/sidebar/sidebar.component";
+
 
 @Component({
     selector: 'app-login',
     standalone: true,
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss',
-    imports: [ReactiveFormsModule, SidebarComponent]
+    imports: [ReactiveFormsModule]
 })
 export class LoginComponent {
   loginForm = new FormGroup({

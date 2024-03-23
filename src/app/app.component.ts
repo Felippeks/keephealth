@@ -18,7 +18,7 @@ export class AppComponent {
       description: '...',
       qttCalories: 0,
       qttDaysFeed: 3,
-      imageLink: '',
+      imageLink: '',  
     },
   ];
 

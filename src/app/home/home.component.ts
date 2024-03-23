@@ -8,7 +8,7 @@ import { SidebarComponent } from "../shared/components/sidebar/sidebar.component
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
-    imports: [SidebarComponent]
+    imports: [SidebarComponent, HeaderComponent]
 })
 export class HomeComponent {
 
