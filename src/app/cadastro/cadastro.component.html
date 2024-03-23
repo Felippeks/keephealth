@@ -14,8 +14,21 @@
         
         <label for="password-forgot">Confirmar Senha</label>
         <input type="password" id="password-forgot" formControlName="confirmPassword" />
+
+        <label for="weight">Peso</label>
+        <input type="number" id="weight" formControlName="weight"/>
+
+        <label for="height">Altura</label>
+        <input type="number" id="height" formControlName="height"/>
+
+        <label for="userCode">Código do Usuário</label>
+        <input type="text" id="userCode" formControlName="userCode"/>
+
+        <label for="location">CEP</label>
+        <input type="text" id="location" formControlName="location"/>
+        <button type="button">Pesquisar CEP</button>
       
         <button type="submit" (click)="cadastrar()" >Cadastrar</button>
-        <button type="button" (click)="backLogin()">Voltar</button>
+        <button type="button" (click)="backLogin()">Login</button>
     </form>
 </section>

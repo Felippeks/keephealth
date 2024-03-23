@@ -9,11 +9,11 @@ import {
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-cadastro',
-    standalone: true,
-    templateUrl: './cadastro.component.html',
-    styleUrl: './cadastro.component.scss',
-    imports: [ReactiveFormsModule, FormsModule,]
+  selector: 'app-cadastro',
+  standalone: true,
+  templateUrl: './cadastro.component.html',
+  styleUrl: './cadastro.component.scss',
+  imports: [ReactiveFormsModule, FormsModule],
 })
 export class CadastroComponent {
   cadastroForm: FormGroup | any;
@@ -25,6 +25,10 @@ export class CadastroComponent {
       date: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
+      weight: new FormControl('', Validators.required),
+      height: new FormControl('', Validators.required),
+      userCode: new FormControl('', Validators.required),
+      location: new FormControl('', Validators.required),
     });
   }
 
@@ -34,10 +38,12 @@ export class CadastroComponent {
         this.cadastroForm.value.password ===
         this.cadastroForm.value.confirmPassword
       ) {
-        localStorage.setItem(
-          this.cadastroForm.value.email,
-          this.cadastroForm.value.password,
-        );
+        let formData = { ...this.cadastroForm.value };
+
+        delete formData.location;
+
+        localStorage.setItem('userData', JSON.stringify(formData));
+
         alert('Usuário cadastrado com sucesso!');
       } else {
         alert('As senhas não correspondem!');

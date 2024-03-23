@@ -7,13 +7,12 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
-    selector: 'app-login',
-    standalone: true,
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.scss',
-    imports: [ReactiveFormsModule]
+  selector: 'app-login',
+  standalone: true,
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss',
+  imports: [ReactiveFormsModule],
 })
 export class LoginComponent {
   loginForm = new FormGroup({
@@ -28,7 +27,10 @@ export class LoginComponent {
       const email = this.loginForm.get('email')?.value;
       const password = this.loginForm.get('password')?.value;
 
-      if (email && localStorage.getItem(email) === password) {
+      // Recupera os dados do usuário do localStorage
+      const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+
+      if (email && userData.email === email && userData.password === password) {
         this.router.navigate(['/home']);
       } else {
         alert('Usuário ou senha inválidos');
@@ -41,8 +43,16 @@ export class LoginComponent {
   onForgotPassword() {
     const email = this.loginForm.get('email')?.value;
 
-    if (email && localStorage.getItem(email)) {
-      localStorage.setItem(email, 'a1b2c4d4');
+    // Recupera os dados do usuário do localStorage
+    const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+
+    if (email && userData.email === email) {
+      // Atualiza a senha do usuário no objeto userData
+      userData.password = 'a1b2c4d4';
+
+      // Salva o objeto userData atualizado no localStorage
+      localStorage.setItem('userData', JSON.stringify(userData));
+
       alert(
         'Sua senha foi alterada para a senha padrão: a1b2c4d4. Por favor, prossiga utilizando essa senha.',
       );

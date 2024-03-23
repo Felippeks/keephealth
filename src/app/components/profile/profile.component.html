@@ -1,1 +1,13 @@
-<p>profile works!</p>
+<app-header></app-header>
+<section class="container">
+    <h2>Perfil do Usuário</h2>
+  
+    <p><strong>Id:</strong> {{ userData.userCode }}</p>
+    <p><strong>Nome:</strong> {{ userData.name }}</p>
+    <p><strong>Email:</strong> {{ userData.email }}</p>
+    <p><strong>Idade:</strong> {{ userData.date | age }} anos</p>
+    <p><strong>Peso:</strong> {{ userData.weight }} kgs</p>
+    <p><strong>Altura:</strong> {{ userData.height | height }}</p>
+    
+  </section>
+  

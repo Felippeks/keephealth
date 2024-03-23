@@ -1,7 +1,15 @@
 <nav>
-  <ul>
-    <li *ngFor="let item of menuItems">
-      {{item}}
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <li (click)="home()">Inicio</li>
+      <li (click)="diet()">Dietas</li>
+      <li (click)="profile()">Perfil</li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <!-- <li (click)="login()" >Login</li> -->
+      <li (click)="cadastro()">Cadastro</li>
+    </ul>
+  </div>
 </nav>
