@@ -6,13 +6,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SidebarComponent } from "../shared/components/sidebar/sidebar.component";
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+    selector: 'app-login',
+    standalone: true,
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss',
+    imports: [ReactiveFormsModule, SidebarComponent]
 })
 export class LoginComponent {
   loginForm = new FormGroup({
@@ -28,7 +29,7 @@ export class LoginComponent {
       const password = this.loginForm.get('password')?.value;
 
       if (email && localStorage.getItem(email) === password) {
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
       } else {
         alert('Usuário ou senha inválidos');
       }

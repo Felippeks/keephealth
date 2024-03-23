@@ -6,14 +6,15 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { SidebarComponent } from "../shared/components/sidebar/sidebar.component"; 
 
 @Component({
-  selector: 'app-cadastro',
-  standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
-  templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.scss',
+    selector: 'app-cadastro',
+    standalone: true,
+    templateUrl: './cadastro.component.html',
+    styleUrl: './cadastro.component.scss',
+    imports: [ReactiveFormsModule, FormsModule, SidebarComponent]
 })
 export class CadastroComponent {
   cadastroForm: FormGroup | any;
