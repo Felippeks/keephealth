@@ -1,34 +1,34 @@
 <section class="flex flex-col items-center justify-center mx-auto w-full text-center text-base p-5 max-w-7xl">
   <form [formGroup]="cadastroForm">
     <label for="name" class="block">Nome</label>
-    <input type="text" id="name" formControlName="name" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="text" id="name" formControlName="name" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="email" class="block">Email</label>
-    <input type="text" id="email" formControlName="email" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="text" id="email" formControlName="email" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="date" class="block">data de nascimento</label>
-    <input type="date" id="date" formControlName="date" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="date" id="date" formControlName="date" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="password" class="block">Senha</label>
-    <input type="password" id="password" formControlName="password" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="password" id="password" formControlName="password" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="password-forgot" class="block">Confirmar Senha</label>
-    <input type="password" id="password-forgot" formControlName="confirmPassword" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="password" id="password-forgot" formControlName="confirmPassword" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="weight" class="block">Peso</label>
-    <input type="number" id="weight" formControlName="weight" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="number" id="weight" formControlName="weight" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="height" class="block">Altura</label>
-    <input type="number" id="height" formControlName="height" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="number" id="height" formControlName="height" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="userCode" class="block">Código do Usuário</label>
-    <input type="text" id="userCode" formControlName="userCode" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <input type="text" id="userCode" formControlName="userCode" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
 
     <label for="location" class="block">CEP</label>
-    <input type="text" id="location" formControlName="location" class="p-2 rounded-full w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
-    <p class="endereco" id="endereco" class="text-base">endereco</p>
+    <input type="text" id="location" formControlName="location" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <p class="endereco" id="endereco" class="text-sm 2xl:text-base">endereco</p>
 
-    <div class="buttons mt-8">
+    <div class="buttons mt-2 2xl:mt-8">
       <button type="button" (click)="pesquisarCEP()" class="mb-2 bg-green-500 hover:bg-green-400 text-white py-2 px-4 rounded-full block text-sm mx-auto cursor-pointer shadow-lg shadow-slate-500 w-1/2 transition-colors duration-300">Pesquisar CEP</button>
       <button type="submit" (click)="cadastrar()" class="mb-2 bg-green-500 hover:bg-green-400 text-white py-2 px-4 rounded-full block text-sm mx-auto cursor-pointer shadow-lg shadow-slate-500 w-1/2 transition-colors duration-300">Cadastrar</button>
       <button type="button" (click)="backLogin()" class="bg-green-500 hover:bg-green-400 text-white py-2 px-4 rounded-full block text-sm mx-auto cursor-pointer shadow-lg shadow-slate-500 w-1/2 transition-colors duration-300">Login</button>
