@@ -1,1 +1,12 @@
-<p>diet-detail works!</p>
+<app-header></app-header>
+<div class="container">
+  <div *ngIf="diet">
+    <h2>{{diet.name}}</h2>
+    <p>{{diet.description}}</p>
+    <p>Calorias: {{diet.qttCalories}}</p>
+    <p>Dias de alimentação: {{diet.qttDaysFeed}}</p>
+    <img [src]="diet.imageLink" alt="{{diet.name}}">
+  </div>
+</div>
+
+  

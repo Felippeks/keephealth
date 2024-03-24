@@ -13,11 +13,13 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cadastro', component: CadastroComponent },
   {
-    path: 'diet',
-    component: DietComponent,
-    children: [{ path: ':id', component: DietDetailComponent }],
+    path: 'diet', 
+    children: [
+      {path: '' , component: DietComponent},
+      { path: ':id', component: DietDetailComponent }],
   },
   { path: 'profile', component: ProfileComponent },
+
 ];
 
 @NgModule({

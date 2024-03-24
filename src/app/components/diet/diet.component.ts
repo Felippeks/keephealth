@@ -5,6 +5,7 @@ import './diets.mock';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 export interface Diets {
   id: number;
@@ -56,4 +57,10 @@ export class DietComponent implements OnInit {
       this.list = this.listLoad;
     }
   }
+
+  constructor(private router: Router) {}
+  goToDetails(id: number) {
+    this.router.navigate(['/diet', id]);
+  }
+  
 }
