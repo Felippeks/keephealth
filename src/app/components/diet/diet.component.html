@@ -1,22 +1,23 @@
 <app-header></app-header>
-<div class="container">
-    <div class="diets">
-        <label for="pesquisa">Pesquisa</label>
+<div class="pt-16">
+    <div class="flex flex-col items-center justify-center mx-auto text-center text-lg max-w-xs">
+        <label for="pesquisa" class="text-3xl italic">Pesquisa</label>
         <input
           type="text"
           id="pesquisa"
           [formControl]="inputPesquisa"
+          class="px-2 py-1 mt-2 mb-2 text-center text-lg italic transition-colors duration-300 ease-in-out bg-white rounded-full shadow-lg shadow-slate-500 w-full focus:outline-none focus:placeholder-gray-600"
         />
         <ng-container *ngFor="let item of list">
           <div>
-            <div>
-              <h3>{{ item.name }}</h3>
-              <img [src]="item.imageLink" alt="{{ item.name }}" />
+            <h3 class="text-2xl font-bold italic mt-5 mb-2">{{ item.name }}</h3>
+            <div class="flex justify-center items-center ">
+              <img [src]="item.imageLink" alt="{{ item.name }}" class="w-72 h-44 shadow-lg shadow-slate-700 rounded-3xl" />
             </div>
             <div>
-              <p>{{ item.description }}</p>
+              <p class="mt-4 text-sm w-96 font-bold text-gray-600">{{ item.description }}</p>
             </div>            
-            <button (click)="goToDetails(item.id)">Detalhes</button>
+            <button (click)="goToDetails(item.id)" class="block w-24 px-2 py-1 mx-auto mt-2 mb-2 text-lg text-white transition-colors duration-300 ease-in-out bg-green-500 rounded-full shadow-lg cursor-pointer hover:bg-green-400">Detalhes</button>
           </div>
         </ng-container>
     </div>
