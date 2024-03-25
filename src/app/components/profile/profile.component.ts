@@ -13,13 +13,13 @@ import { CepService } from '../../services/address.service';
 })
 export class ProfileComponent implements OnInit {
   userData: any;
-  userAddress: string | undefined; 
+  userAddress: string | undefined;
 
   constructor(private cepService: CepService) {} // Injete o serviço
 
   ngOnInit(): void {
     this.userData = JSON.parse(localStorage.getItem('userData') || '{}');
-    this.getAddress(this.userData.location); 
+    this.getAddress(this.userData.location);
   }
 
   getAddress(cep: string) {

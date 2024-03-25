@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderComponent } from "../../../shared/components/header/header.component";
+import { HeaderComponent } from '../../../shared/components/header/header.component';
 
 export interface Diets {
   id: number;
@@ -13,11 +13,11 @@ export interface Diets {
 }
 
 @Component({
-    selector: 'app-diet-detail',
-    standalone: true,
-    templateUrl: './diet-detail.component.html',
-    styleUrl: './diet-detail.component.scss',
-    imports: [CommonModule, HeaderComponent]
+  selector: 'app-diet-detail',
+  standalone: true,
+  templateUrl: './diet-detail.component.html',
+  styleUrl: './diet-detail.component.scss',
+  imports: [CommonModule, HeaderComponent],
 })
 export class DietDetailComponent implements OnInit {
   diet: Diets | undefined;
@@ -32,8 +32,8 @@ export class DietDetailComponent implements OnInit {
       let id = this.route.snapshot.paramMap.get('id');
       if (id) {
         let dietId = +id;
-        this.diet = this.listLoad.find(diet => diet.id === dietId);
-      } 
-    } 
+        this.diet = this.listLoad.find((diet) => diet.id === dietId);
+      }
+    }
   }
 }

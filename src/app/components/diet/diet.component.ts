@@ -62,5 +62,4 @@ export class DietComponent implements OnInit {
   goToDetails(id: number) {
     this.router.navigate(['/diet', id]);
   }
-  
 }
