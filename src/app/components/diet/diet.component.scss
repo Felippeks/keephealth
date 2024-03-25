@@ -1,10 +1,61 @@
 .parallax {
-    background-image: url('../../../assets/bgimg.png');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh; 
-    width: 100%;
+  background-image: url('../../../assets/bgimg.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+.slider-arrow {
+  background: none;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.shadow_extra {
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(0, 0, 0, 0.1);
+  animation: shadow-pulse 4s infinite;
+
+  @keyframes shadow-pulse {
+    0% {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+      box-shadow:
+        0 0 15px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(0, 0, 0, 0.4),
+        0 0 35px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
   }
-  
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #f79470;
+}
+
+
+@media screen and (max-width: 450px) {
+  .slider-arrow {
+    display: none;
+  }
+}

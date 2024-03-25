@@ -1,5 +1,4 @@
-// diet.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import './diets.mock';
 import { CommonModule } from '@angular/common';
@@ -29,12 +28,19 @@ export interface Diets {
     RouterModule,
   ],
 })
-export class DietComponent implements OnInit {
+export class DietComponent implements OnInit, OnDestroy {
   listLoad: Diets[] = [];
   list: Diets[] = [];
   inputPesquisa = new FormControl('');
 
+  current = 0;
+  timerId: any;
+
   ngOnInit() {
+    this.timerId = setInterval(() => {
+      this.next();
+    }, 5000);
+
     let dietsData = localStorage.getItem('diets');
     if (dietsData) {
       this.listLoad = JSON.parse(dietsData) as Diets[];
@@ -46,6 +52,26 @@ export class DietComponent implements OnInit {
     this.inputPesquisa.valueChanges.subscribe((val) => {
       this.pesquisa(val || '');
     });
+  }
+
+  ngOnDestroy() {
+    if (this.timerId) {
+      clearInterval(this.timerId);
+    }
+  }
+
+  previous() {
+    if (this.current > 0) {
+      this.current--;
+    }
+  }
+
+  next() {
+    if (this.current < this.list.length - 1) {
+      this.current++;
+    } else {
+      this.current = 0;
+    }
   }
 
   pesquisa(val: string) {
