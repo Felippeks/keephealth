@@ -1,6 +1,6 @@
 // diet.component.ts
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../../shared/components/header/header.component';
+import { HeaderComponent } from '../shared/header/header.component';
 import './diets.mock';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';

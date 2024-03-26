@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../../shared/components/header/header.component';
+import { HeaderComponent } from '../shared/header/header.component';
 import { AgePipe } from '../../pipes/age.pipe';
 import { HeightPipe } from '../../pipes/height.pipe';
 import { CepService } from '../../services/address.service';
