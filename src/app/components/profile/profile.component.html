@@ -1,12 +1,45 @@
 <app-header></app-header>
-<section class="flex flex-col items-center justify-center mx-auto w-full text-center text-lg  parallax">
-    <h2 class="2xl:text-7xl text-4xl font-bold italic mt-5 mb-2">Perfil do Usuário</h2>
-  
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black ">Id:</strong> {{ userData.userCode }}</p>
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black">Nome:</strong> {{ userData.name }}</p>
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black">Email:</strong> {{ userData.email }}</p>
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black">Idade:</strong> {{ userData.date | age }} anos</p>
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black">Peso:</strong> {{ userData.weight }} kgs</p>
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black">Altura:</strong> {{ userData.height | height }}</p>
-    <p class="italic 2xl:text-4xl text-2xl"><strong class="text-[#D2691E] font-black">Endereço:</strong> {{userAddress}}</p>
+<section class="flex flex-col mx-auto text-center text-lg parallax">
+  <div
+    class="bg-[#fef2e2] px-20 py-10 border-[6px] items-center justify-center flex flex-col border-[#f79470] shadow-xl shadow-slate-500 rounded-3xl float-right xl:ml-[300px] mt-52 max-w-lg"
+  >
+    <h2 class="xl:text-3xl text-2xl font-bold italic m-6 text-[#3b595d]">
+      Perfil do Usuário
+    </h2>
+    <img
+      class="w-44 h-44 rounded-full mb-4"
+      :src="./assets/profile.png"
+      alt="Profile image"
+    />
+    <div class="border-[3px] items-center p-10 justify-center flex flex-col border-[#f79470] shadow-xl shadow-slate-500 rounded-3xl">
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Id:</strong>
+        {{ userData.userCode }}
+      </p>
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Nome:</strong>
+        {{ userData.name }}
+      </p>
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Email:</strong>
+        {{ userData.email }}
+      </p>
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Idade:</strong>
+        {{ userData.date | age }} anos
+      </p>
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Peso:</strong>
+        {{ userData.weight }} kgs
+      </p>
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Altura:</strong>
+        {{ userData.height | height }}
+      </p>
+      <p class="italic text-2xl">
+        <strong class="text-[#D2691E] font-medium">Endereço:</strong>
+        {{ userAddress }}
+      </p>
+    </div>
+  </div>
 </section>
