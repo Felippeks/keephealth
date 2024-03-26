@@ -10,7 +10,7 @@
         <div *ngIf="i === current" class="slider-item text-center">
           <h3 class="2xl:text-3xl text-xl font-bold italic mb-10">{{ item.name }}</h3>
           <div class="flex justify-center items-center ">
-            <img [src]="item.imageLink" alt="{{ item.name }}" class="2xl:w-72 2xl:h-44 w-50 h-32 shadow-lg shadow-slate-700 rounded-3xl " />
+            <img [src]="item.imageLink" alt="{{ item.name }}" class="shadow-lg shadow-slate-700 rounded-3xl " />
           </div>
           <div>
             <p class="mt-4 text-lg w-96 font-bold text-gray-600 mx-auto">{{ item.description | slice:0:25 }}...</p>

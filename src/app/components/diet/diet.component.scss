@@ -54,6 +54,12 @@
   background-color: #f79470;
 }
 
+img {
+  width: 300px;  
+  height: 200px; 
+  object-fit: cover; 
+}
+
 
 @media screen and (max-width: 450px) {
   .slider-arrow {
