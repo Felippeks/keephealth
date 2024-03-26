@@ -3,4 +3,19 @@
 @tailwind utilities;
 
 
+/* Estilo para a barra de rolagem */
+body::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Estilo para a alça (parte móvel) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #f79470;
+  border-radius: 5px;
+}
+
+/* Estilo para a parte rastreável (parte fixa) da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #3b595d;
+  border-radius: 5px;
+}
