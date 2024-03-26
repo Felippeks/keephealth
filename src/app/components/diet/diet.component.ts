@@ -84,6 +84,10 @@ export class DietComponent implements OnInit, OnDestroy {
     }
   }
 
+  goToSlide(index: number) {
+    this.current = index;
+  }
+  
   constructor(private router: Router) {}
   goToDetails(id: number) {
     this.router.navigate(['/diet', id]);
