@@ -11,9 +11,25 @@
 
     <label for="password" class="block">Senha</label>
     <input type="password" id="password" formControlName="password" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <div *ngIf="cadastroForm.controls.password.invalid && (cadastroForm.controls.password.dirty || cadastroForm.controls.password.touched)" class="text-red-500">
+      <div *ngIf="cadastroForm.controls.password.errors.required">
+        Preenchimento obrigatório
+      </div>
+      <div *ngIf="cadastroForm.controls.password.errors.minlength">
+        A senha deve conter ao menos 4 caracteres
+      </div>
+    </div>
 
     <label for="password-forgot" class="block">Confirmar Senha</label>
     <input type="password" id="password-forgot" formControlName="confirmPassword" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <div *ngIf="cadastroForm.controls.confirmPassword.invalid && (cadastroForm.controls.confirmPassword.dirty || cadastroForm.controls.confirmPassword.touched)" class="text-red-500">
+      <div *ngIf="cadastroForm.controls.confirmPassword.errors.required">
+        Preenchimento obrigatório
+      </div>
+      <div *ngIf="cadastroForm.controls.confirmPassword.errors.minlength">
+        A senha deve conter ao menos 4 caracteres
+      </div>
+    </div>
 
     <label for="weight" class="block">Peso</label>
     <input type="number" id="weight" formControlName="weight" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
@@ -23,6 +39,14 @@
 
     <label for="userCode" class="block">Código do Usuário</label>
     <input type="text" id="userCode" formControlName="userCode" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>
+    <div *ngIf="cadastroForm.controls.userCode.invalid && (cadastroForm.controls.userCode.dirty || cadastroForm.controls.userCode.touched)" class="text-red-500">
+      <div *ngIf="cadastroForm.controls.userCode.errors.required">
+        Preenchimento obrigatório
+      </div>
+      <div *ngIf="cadastroForm.controls.userCode.errors.minlength || cadastroForm.controls.userCode.errors.maxlength">
+        O código precisa ter entre 5 e 10 caracteres
+      </div>
+    </div>
 
     <label for="location" class="block">CEP</label>
     <input type="text" id="location" formControlName="location" class="p-2 rounded-full w-80 2xl:w-96 transition-colors duration-300 text-center text-base italic my-1 shadow-lg shadow-slate-500 focus:outline-none focus:placeholder-gray-600"/>

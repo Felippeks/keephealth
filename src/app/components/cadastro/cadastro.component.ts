@@ -29,11 +29,21 @@ export class CadastroComponent {
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       date: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      confirmPassword: new FormControl('', Validators.required),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      confirmPassword: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
       weight: new FormControl('', Validators.required),
       height: new FormControl('', Validators.required),
-      userCode: new FormControl('', Validators.required),
+      userCode: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(10),
+      ]),
       location: new FormControl('', Validators.required),
     });
   }
