@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderComponent } from '../../shared/header/header.component';
+import { SharedModule } from '../../shared/shared.module';
 
 export interface Diets {
   id: number;
@@ -17,7 +17,7 @@ export interface Diets {
   standalone: true,
   templateUrl: './diet-detail.component.html',
   styleUrl: './diet-detail.component.scss',
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, SharedModule],
 })
 export class DietDetailComponent implements OnInit {
   diet: Diets | undefined;

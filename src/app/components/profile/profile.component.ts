@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../shared/header/header.component';
 import { AgePipe } from '../../pipes/age.pipe';
 import { HeightPipe } from '../../pipes/height.pipe';
 import { CepService } from '../../services/address.service';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
-  imports: [HeaderComponent, AgePipe, HeightPipe],
+  imports: [SharedModule, AgePipe, HeightPipe],
 })
 export class ProfileComponent implements OnInit {
   userData: any;

@@ -1,11 +1,11 @@
 // diet.component.ts
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../shared/header/header.component';
 import './diets.mock';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 export interface Diets {
   id: number;
@@ -22,7 +22,7 @@ export interface Diets {
   templateUrl: './diet.component.html',
   styleUrl: './diet.component.scss',
   imports: [
-    HeaderComponent,
+    SharedModule,
     CommonModule,
     ReactiveFormsModule,
     RouterOutlet,
