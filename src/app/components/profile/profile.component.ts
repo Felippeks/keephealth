@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AgePipe } from '../../pipes/age.pipe';
 import { HeightPipe } from '../../pipes/height.pipe';
 import { CepService } from '../../services/address.service';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../shared/header/shared.module';
 
 @Component({
   selector: 'app-profile',

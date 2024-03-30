@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../shared/header/shared.module';
 
 @Component({
   selector: 'app-home',
