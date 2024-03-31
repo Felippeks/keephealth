@@ -4,8 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule } from 'primeng/calendar';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,13 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonModule,
     FormsModule,
     DropdownModule,
+    CalendarModule
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
   visible: boolean = false;
-  tiposAtividade: string[] = ['Corrida', 'Caminhada', 'Natação', 'Ciclismo'];
+  tiposAtividade: string[] = ['Corrida', 'Caminhada', 'Natação', 'Ciclismo', 'Musculação', 'Crossfit', 'Yoga', 'Pilates'];
   atividade: any = {};
   atividades: any[] = [];
 

@@ -1,21 +1,21 @@
 <p-button (click)="showDialog()" icon="pi pi-external-link" label="Adicionar atividade"></p-button>
-<p-dialog header="Adicionar Atividade" [(visible)]="visible" [modal]="true" [style]="{width: '300px', height:'500px'}">
+<p-dialog header="Adicionar Atividade" [(visible)]="visible" [modal]="true" [style]="{width: '300px'}">
   <div >
     <div >
       <label for="tipo">Tipo de Atividade</label>
-      <p-dropdown id="tipo" [(ngModel)]="atividade.tipo" [options]="tiposAtividade"></p-dropdown>
+      <p-dropdown id="tipo" [(ngModel)]="atividade.tipo" [options]="tiposAtividade" aria-label="Tipo de Atividade"></p-dropdown>
     </div>
     <div >
       <label for="data">Data Realizada</label>
-      <p-calendar id="data" [(ngModel)]="atividade.data" dateFormat="dd/mm/yy"></p-calendar>
+      <p-calendar id="data" [(ngModel)]="atividade.data" dateFormat="dd/mm/yy" class="w-60 h-60" aria-label="Data Realizada" pInputText placeholder="--/--/----"></p-calendar>
     </div>
     <div >
       <label for="distancia">Distância (opcional)</label>
-      <input id="distancia" type="text" [(ngModel)]="atividade.distancia" pInputText>
+      <input id="distancia" type="text" [(ngModel)]="atividade.distancia" pInputText placeholder="Distância em km">
     </div>
     <div >
       <label for="tempo">Tempo (opcional)</label>
-      <input id="tempo" type="text" [(ngModel)]="atividade.tempo" pInputText>
+      <input id="tempo" type="text" [(ngModel)]="atividade.tempo" pInputText placeholder="Tempo em minutos">
     </div>
   </div>
   <p-footer>
