@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AtividadesService } from '../../../services/atividades.service';
 interface Atividade {
   tipo: string;
   data: Date;
@@ -28,11 +29,11 @@ export class SidebarComponent {
   showDialog() {
     this.visible = true;
   }
+  constructor(private atividadesService: AtividadesService) {}
 
   salvarAtividade() {
     if (this.atividade.tipo && this.atividade.data) {
-      this.atividades.push(this.atividade);
-      localStorage.setItem('atividades', JSON.stringify(this.atividades));
+      this.atividadesService.addAtividade(this.atividade);
       this.atividade = { tipo: '', data: new Date() };
       this.visible = false;
     } else {
