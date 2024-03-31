@@ -5,6 +5,12 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
+interface Atividade {
+  tipo: string;
+  data: Date;
+  distancia?: number;
+  tempo?: number;
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -15,25 +21,38 @@ import { CalendarModule } from 'primeng/calendar';
     ButtonModule,
     FormsModule,
     DropdownModule,
-    CalendarModule
+    CalendarModule,
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  visible: boolean = false;
-  tiposAtividade: string[] = ['Corrida', 'Caminhada', 'Natação', 'Ciclismo', 'Musculação', 'Crossfit', 'Yoga', 'Pilates'];
-  atividade: any = {};
-  atividades: any[] = [];
+  visible = false;
+  tiposAtividade = [
+    'Corrida',
+    'Caminhada',
+    'Natação',
+    'Ciclismo',
+    'Musculação',
+    'Crossfit',
+    'Yoga',
+    'Pilates',
+  ];
+  atividade: Atividade = { tipo: '', data: new Date() };
+  atividades: Atividade[] = [];
 
   showDialog() {
     this.visible = true;
   }
 
   salvarAtividade() {
-    this.atividades.push(this.atividade);
-    localStorage.setItem('atividades', JSON.stringify(this.atividades));
-    this.atividade = {};
-    this.visible = false;
+    if (this.atividade.tipo && this.atividade.data) {
+      this.atividades.push(this.atividade);
+      localStorage.setItem('atividades', JSON.stringify(this.atividades));
+      this.atividade = { tipo: '', data: new Date() };
+      this.visible = false;
+    } else {
+      alert('Por favor, preencha todos os campos necessários.');
+    }
   }
 }
