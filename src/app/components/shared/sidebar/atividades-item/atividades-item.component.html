@@ -4,5 +4,5 @@
     <p>Data: {{ atividade.data | date:'dd/MM/yyyy' }}</p>
     <p *ngIf="atividade.distancia">Distância: {{ atividade.distancia }} km</p>
     <p *ngIf="atividade.tempo">Tempo: {{ atividade.tempo }} minutos</p>
-    <button class="rounded-full border-none shadow-md shadow-slate-700 text-[#3b595d] hover:text-white xl:w-44 w-20 text-base xl:text-base italic text-center bg-[#f79470] transform transition-all duration-300 hover:scale-110 hover:bg-[#3b595d]" (click)="excluirAtividade(i)">Excluir Atividade</button>
+    <button class="rounded-full border-none shadow-md shadow-slate-700 text-[#3b595d] hover:text-white w-44 text-base xl:text-base italic text-center bg-[#f79470] transform transition-all duration-300 hover:scale-110 hover:bg-[#3b595d]" (click)="excluirAtividade(i)">Excluir Atividade</button>
 </div>
