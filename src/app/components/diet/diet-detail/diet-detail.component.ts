@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SharedModule } from '../../shared/header/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 export interface Diets {
   id: number;

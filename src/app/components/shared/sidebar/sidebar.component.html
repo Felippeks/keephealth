@@ -7,7 +7,7 @@
     </div>
     <div class= "my-4 border-2 rounded-md py-2">
       <label for="data">Data Realizada: </label>
-      <p-calendar id="data" [(ngModel)]="atividade.data" dateFormat="dd/mm/yy"  aria-label="Data Realizada" pInputText placeholder="--/--/----"></p-calendar>
+      <p-calendar id="data" [(ngModel)]="atividade.data" dateFormat="dd/mm/yy" [iconDisplay]="'input'" [showIcon]="true" aria-label="Data Realizada" pInputText placeholder="--/--/----"></p-calendar>
     </div>
     <div class= "my-4 border-2 rounded-md py-2">
       <label for="distancia">Distância (opcional): </label>
@@ -18,7 +18,7 @@
       <input id="tempo" type="text" [(ngModel)]="atividade.tempo" pInputText placeholder="Tempo em minutos">
     </div>
   </div>
-  <p-footer>
+  <p-footer [ngStyle]="{backgroundColor:'var(--primary-color)', color: 'var(--primary-color-text)', borderRadius: 'var(--border-radius)', padding: '1rem'}">
     <p-button (click)="salvarAtividade()" label="Salvar"></p-button>
   </p-footer>
 </p-dialog>

@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarComponent } from '../shared/sidebar/sidebar.component';
-import { SharedModule } from '../shared/header/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [SidebarComponent, SharedModule],
+  imports: [SharedModule],
 })
 export class HomeComponent implements OnInit {
   userData: any;
