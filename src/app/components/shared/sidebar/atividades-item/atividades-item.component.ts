@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AtividadesService } from '../../../../services/atividades.service';
+import { ImagemAtividadeService } from '../../../../services/imagem-atividade-service.service';
 
 export interface Atividade {
   tipo: string;
@@ -19,7 +20,10 @@ export interface Atividade {
 export class AtividadesItemComponent implements OnInit {
   atividades: Atividade[] = [];
 
-  constructor(private atividadesService: AtividadesService) {}
+  constructor(
+    private atividadesService: AtividadesService,
+    private imagemAtividadeService: ImagemAtividadeService
+  ) {}
 
   ngOnInit() {
     this.atividadesService.atividades$.subscribe((atividades) => {
@@ -35,12 +39,7 @@ export class AtividadesItemComponent implements OnInit {
   }
 
   getImagemAtividade(tipo: string) {
-    const imagens: { [key: string]: string } = {
-      Corrida:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrU0xozZUTkHO9xqPUz2wM_5mfF_XC-Hf3kDPWC9oGuNdDxf1UpG6GeCKU2xA40zmtrL8&usqp=CAU',
-      Caminhada: 'url_da_imagem_caminhada',
-    };
-    return imagens[tipo];
+    return this.imagemAtividadeService.getImagem(tipo);
   }
 
   excluirAtividade(index: number) {

@@ -19,7 +19,6 @@ export class SidebarComponent {
     'Natação',
     'Ciclismo',
     'Musculação',
-    'Crossfit',
     'Yoga',
     'Pilates',
   ];
