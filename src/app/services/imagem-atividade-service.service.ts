@@ -15,8 +15,8 @@ export class ImagemAtividadeService {
       'https://cdn.icon-icons.com/icons2/37/PNG/512/regularcycling_sport_regula_3648.png',
     Musculação:
       'https://wallpapers.com/images/hd/pilates-reformer-workout-silhouette-zscylpjjafcdrqoz.png',
-      Yoga:'https://cdn.icon-icons.com/icons2/37/PNG/512/yoga_3632.png',
-      Pilates:'https://static.thenounproject.com/png/995-200.png'
+    Yoga: 'https://cdn.icon-icons.com/icons2/37/PNG/512/yoga_3632.png',
+    Pilates: 'https://static.thenounproject.com/png/995-200.png',
   };
 
   getImagem(tipo: string) {

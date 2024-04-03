@@ -27,7 +27,6 @@ export class SidebarComponent {
 
   showDialog() {
     this.visible = true;
-    
   }
   constructor(private atividadesService: AtividadesService) {}
 
@@ -39,6 +38,5 @@ export class SidebarComponent {
     } else {
       alert('Por favor, preencha todos os campos necessários.');
     }
-    
   }
 }

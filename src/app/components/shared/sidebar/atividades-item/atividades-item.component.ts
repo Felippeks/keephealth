@@ -22,7 +22,7 @@ export class AtividadesItemComponent implements OnInit {
 
   constructor(
     private atividadesService: AtividadesService,
-    private imagemAtividadeService: ImagemAtividadeService
+    private imagemAtividadeService: ImagemAtividadeService,
   ) {}
 
   ngOnInit() {

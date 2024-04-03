@@ -9,6 +9,7 @@ export interface Diets {
   description: string;
   qttCalories: number;
   qttDaysFeed: number;
+  alimentos: string;
   imageLink: string;
 }
 
