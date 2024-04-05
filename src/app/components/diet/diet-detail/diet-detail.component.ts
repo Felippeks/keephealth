@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 
 export interface Diets {
@@ -24,17 +24,23 @@ export class DietDetailComponent implements OnInit {
   diet: Diets | undefined;
   listLoad: Diets[] | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: Router,
+    private activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
     let dietsData = localStorage.getItem('diets');
     if (dietsData) {
       this.listLoad = JSON.parse(dietsData) as Diets[];
-      let id = this.route.snapshot.paramMap.get('id');
+      let id = this.activatedRoute.snapshot.paramMap.get('id');
       if (id) {
         let dietId = +id;
         this.diet = this.listLoad.find((diet) => diet.id === dietId);
       }
     }
+  }
+  BackToDiets() {
+    this.route.navigate(['/diet']);
   }
 }

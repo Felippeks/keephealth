@@ -39,7 +39,7 @@ export class CadastroComponent {
       ]),
       weight: new FormControl('', Validators.required),
       height: new FormControl('', Validators.required),
-      userCode: new FormControl('', [
+      userCode: new FormControl(this.generateUserCode(), [
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(10),
@@ -47,7 +47,18 @@ export class CadastroComponent {
       location: new FormControl('', Validators.required),
     });
   }
-
+  generateUserCode(): string {
+    let userCode = '';
+    const characters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < 10; i++) {
+      userCode += characters.charAt(
+        Math.floor(Math.random() * charactersLength),
+      );
+    }
+    return userCode;
+  }
   cadastrar() {
     if (this.cadastroForm.valid) {
       if (
