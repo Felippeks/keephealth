@@ -19,8 +19,9 @@ export class HeaderComponent {
   profile() {
     this.router.navigate(['/profile']);
   }
-  cadastro() {
-    this.router.navigate(['/cadastro']);
+  logout() {
+    localStorage.setItem('isLoggedIn', 'false');
+    this.router.navigate(['/login']);
   }
 
   home() {
