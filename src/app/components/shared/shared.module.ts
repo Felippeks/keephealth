@@ -9,7 +9,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [HeaderComponent, SidebarComponent], //declarar o componente
+  declarations: [HeaderComponent, SidebarComponent],
   imports: [
     CommonModule,
     DialogModule,
@@ -18,6 +18,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     DropdownModule,
     CalendarModule,
   ],
-  exports: [HeaderComponent, SidebarComponent], //exportar o componente
+  exports: [HeaderComponent, SidebarComponent],
 })
 export class SharedModule {}
