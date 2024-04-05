@@ -27,7 +27,6 @@ export class LoginComponent {
       const email = this.loginForm.get('email')?.value;
       const password = this.loginForm.get('password')?.value;
 
-      // Recupera os dados do usuário do localStorage
       const userData = JSON.parse(localStorage.getItem('userData') || '{}');
 
       if (email && userData.email === email && userData.password === password) {
@@ -43,14 +42,10 @@ export class LoginComponent {
   onForgotPassword() {
     const email = this.loginForm.get('email')?.value;
 
-    // Recupera os dados do usuário do localStorage
     const userData = JSON.parse(localStorage.getItem('userData') || '{}');
 
     if (email && userData.email === email) {
-      // Atualiza a senha do usuário no objeto userData
       userData.password = 'a1b2c4d4';
-
-      // Salva o objeto userData atualizado no localStorage
       localStorage.setItem('userData', JSON.stringify(userData));
 
       alert(
