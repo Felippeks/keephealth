@@ -22,7 +22,7 @@ export const routes: Routes = [
     path: 'diet',
     loadChildren: () =>
       import('./components/diet/diets.module').then((m) => m.DietsModule),
-    canActivateChild: [authChildGuard],
+    canActivate: [AuthGuardRouter],
   },
 ];
 
